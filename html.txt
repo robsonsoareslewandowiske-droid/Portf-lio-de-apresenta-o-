@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Robson Magalhães | Web Developer</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Inter',sans-serif;
+}
+
+body{
+    background:#0a0f1c;
+    color:#fff;
+    scroll-behavior:smooth;
+}
+
+/* NAV */
+nav{
+    position:fixed;
+    width:100%;
+    padding:20px 10%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    background:rgba(10,15,28,0.85);
+    backdrop-filter:blur(10px);
+    z-index:1000;
+}
+
+nav h2{
+    color:#00d4ff;
+}
+
+nav ul{
+    list-style:none;
+    display:flex;
+    gap:25px;
+}
+
+nav a{
+    text-decoration:none;
+    color:#fff;
+    font-size:0.9rem;
+    transition:0.3s;
+}
+
+nav a:hover{
+    color:#00d4ff;
+}
+
+/* HERO */
+.hero{
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:0 10%;
+    background:linear-gradient(135deg,#0a0f1c,#111827);
+}
+
+.hero h1{
+    font-size:3rem;
+}
+
+.hero span{
+    color:#00d4ff;
+}
+
+.hero p{
+    margin:20px 0;
+    color:#9ca3af;
+    font-size:1.1rem;
+}
+
+.btn{
+    display:inline-block;
+    padding:12px 28px;
+    background:#00d4ff;
+    color:#000;
+    font-weight:600;
+    border-radius:30px;
+    text-decoration:none;
+    transition:0.3s;
+}
+
+.btn:hover{
+    transform:translateY(-4px);
+    box-shadow:0 15px 30px rgba(0,212,255,0.4);
+}
+
+/* SECTIONS */
+section{
+    padding:100px 10%;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:50px;
+    color:#00d4ff;
+    font-size:2rem;
+}
+
+/* SOBRE */
+.sobre{
+    max-width:800px;
+    margin:auto;
+    text-align:center;
+    color:#cbd5e1;
+}
+
+/* GRID */
+.grid{
+    display:flex;
+    flex-wrap:wrap;
+    gap:25px;
+    justify-content:center;
+}
+
+.card{
+    background:#111827;
+    padding:25px;
+    border-radius:15px;
+    width:280px;
+    border:1px solid #1f2937;
+    transition:0.4s;
+    opacity:0;
+    transform:translateY(40px);
+}
+
+.card.show{
+    opacity:1;
+    transform:translateY(0);
+}
+
+.card:hover{
+    transform:translateY(-10px);
+    border-color:#00d4ff;
+}
+
+.card h3{
+    color:#00d4ff;
+    margin-bottom:10px;
+}
+
+/* CONTATO */
+.contato{
+    display:flex;
+    justify-content:center;
+    gap:25px;
+    flex-wrap:wrap;
+}
+
+.contact-btn{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    padding:15px 30px;
+    border-radius:40px;
+    font-weight:600;
+    text-decoration:none;
+    font-size:1rem;
+    transition:0.35s;
+}
+
+.email{
+    background:#00d4ff;
+    color:#000;
+}
+
+.email:hover{
+    transform:translateY(-6px);
+    box-shadow:0 15px 30px rgba(0,212,255,0.4);
+}
+
+/* WHATSAPP FLUTUANTE */
+.whatsapp-float{
+    position:fixed;
+    width:60px;
+    height:60px;
+    bottom:25px;
+    right:25px;
+    background:#25D366;
+    color:#fff;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:28px;
+    text-decoration:none;
+    box-shadow:0 10px 25px rgba(0,0,0,0.3);
+    transition:0.3s;
+    z-index:1000;
+    animation:pulse 2s infinite;
+}
+
+.whatsapp-float:hover{
+    transform:scale(1.1);
+    box-shadow:0 15px 35px rgba(37,211,102,0.6);
+}
+
+@keyframes pulse{
+    0%{
+        box-shadow:0 0 0 0 rgba(37,211,102,0.6);
+    }
+    70%{
+        box-shadow:0 0 0 15px rgba(37,211,102,0);
+    }
+    100%{
+        box-shadow:0 0 0 0 rgba(37,211,102,0);
+    }
+}
+
+footer{
+    text-align:center;
+    padding:30px;
+    background:#0a0f1c;
+    border-top:1px solid #1f2937;
+    color:#6b7280;
+}
+
+@media(max-width:768px){
+    .hero h1{
+        font-size:2.2rem;
+    }
+    nav ul{
+        display:none;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+    <h2>Robson Magalhães</h2>
+    <ul>
+        <li><a href="#sobre">Sobre</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projetos">Projetos</a></li>
+        <li><a href="#contato">Contato</a></li>
+    </ul>
+</nav>
+
+<section class="hero">
+    <div>
+        <h1>Olá, eu sou <span>Robson Magalhães</span></h1>
+        <p><span id="typing"></span></p>
+        <a href="#contato" class="btn">Entrar em Contato</a>
+    </div>
+</section>
+
+<section id="sobre">
+    <h2 class="section-title">Sobre Mim</h2>
+    <div class="sobre">
+        <p>
+            Sou estudante do Instituto Politécnico Industrial do Zango 5 (IPIZ),
+            tenho 15 anos e estou no 1º ano do ensino médio no curso de T.I.
+            Possuo 1 ano e meio de experiência em desenvolvimento web,
+            criando interfaces modernas e responsivas.
+        </p>
+    </div>
+</section>
+
+<section id="skills">
+    <h2 class="section-title">Skills</h2>
+    <div class="grid">
+        <div class="card">HTML5</div>
+        <div class="card">CSS3</div>
+        <div class="card">JavaScript</div>
+        <div class="card">Design Responsivo</div>
+        <div class="card">UI/UX</div>
+    </div>
+</section>
+
+<section id="projetos">
+    <h2 class="section-title">Projetos</h2>
+    <div class="grid">
+        <div class="card">
+            <h3>Site Escolar</h3>
+            <p>Plataforma moderna com login e dashboard.</p>
+        </div>
+        <div class="card">
+            <h3>Landing Page Tech</h3>
+            <p>Página focada em serviços digitais.</p>
+        </div>
+        <div class="card">
+            <h3>Portfólio Profissional</h3>
+            <p>Website pessoal moderno e responsivo.</p>
+        </div>
+    </div>
+</section>
+
+<section id="contato">
+    <h2 class="section-title">Contato</h2>
+    <div class="contato">
+        <a href="mailto:robsonsoareslewandowiske@gmail.com" class="contact-btn email">
+            ✉️ Enviar Email
+        </a>
+    </div>
+</section>
+
+<footer>
+    © 2026 Cybeer • Desenvolvedor Web • IPIZ
+</footer>
+
+<!-- WhatsApp Flutuante -->
+<a href="https://wa.me/244958835941" 
+   class="whatsapp-float" 
+   target="_blank">
+   💬
+</a>
+
+<script>
+const text = "Desenvolvedor Web | Estudante de T.I";
+let i = 0;
+
+function typeWriter(){
+    if(i < text.length){
+        document.getElementById("typing").innerHTML += text.charAt(i);
+        i++;
+        setTimeout(typeWriter, 60);
+    }
+}
+typeWriter();
+
+const cards = document.querySelectorAll(".card");
+
+window.addEventListener("scroll", ()=>{
+    cards.forEach(card=>{
+        const cardTop = card.getBoundingClientRect().top;
+        if(cardTop < window.innerHeight - 50){
+            card.classList.add("show");
+        }
+    });
+});
+</script>
+
+</body>
+</html>
